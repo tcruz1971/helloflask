@@ -3,10 +3,10 @@ from fabric.api import env, run, cd
 USERNAME = 'root'
 SERVER = 'virtual'
 APP_NAME = 'helloflask'
-PROJECT_DIR = '/www/%s/%s' % (SERVER, APP_NAME)
+PROJECT_DIR = '/var/www/%s/%s' % (SERVER, APP_NAME)
 WSGI_SCRIPT = 'application.wsgi'
 
-env.hosts = ["%s@%s" % (USERNAME, SERVER)]
+env.hosts = ["%s@%s" % (USERNAME, 'localhost')]
 
 def deploy():
     with cd(PROJECT_DIR):
